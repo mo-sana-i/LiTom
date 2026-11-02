@@ -38,6 +38,24 @@
             ccw-binding = <&kp LA(LG(LEFT_ARROW))>;
             tap-ms = <20>;
         };
+
+        bright_up_down: behavior_sensor_rotate_brightness {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            label = "ENCODER_BRIGHTNESS";
+            #sensor-binding-cells = <0>;
+            cw-binding = <&kp C_BRI_UP>;
+            ccw-binding = <&kp C_BRI_DN>;
+            tap-ms = <20>;
+        };
+
+        vol_up_down: behavior_sensor_rotate_volume {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            label = "ENCODER_VOLUME";
+            #sensor-binding-cells = <0>;
+            cw-binding = <&kp C_VOL_UP>;
+            ccw-binding = <&kp C_VOL_DN>;
+            tap-ms = <20>;
+        };
     };
 
     keymap: keymap {
@@ -53,9 +71,9 @@
             >;
 
             sensor-bindings = <
-                &tab_slide
-                &scroll_up_down
-                &scroll_up_down
+                &scroll_up_down   // ① 左・下側  → スクロール
+                &bright_up_down   // ② 左・サイド → 画面輝度
+                &vol_up_down      // ③ 右・サイド → 音量
             >;
         };
 
@@ -69,9 +87,9 @@
             >;
 
             sensor-bindings = <
-                &tab_slide
-                &scroll_up_down
-                &scroll_up_down
+                &scroll_up_down   // ① 左・下側  → スクロール
+                &bright_up_down   // ② 左・サイド → 画面輝度
+                &vol_up_down      // ③ 右・サイド → 音量
             >;
         };
 
@@ -85,9 +103,9 @@
             >;
 
             sensor-bindings = <
-                &tab_slide
-                &scroll_up_down
-                &scroll_up_down
+                &scroll_up_down   // ① 左・下側  → スクロール
+                &bright_up_down   // ② 左・サイド → 画面輝度
+                &vol_up_down      // ③ 右・サイド → 音量
             >;
         };
 
@@ -101,9 +119,9 @@
             >;
 
             sensor-bindings = <
-                &tab_slide
-                &scroll_up_down
-                &scroll_up_down
+                &scroll_up_down   // ① 左・下側  → スクロール
+                &bright_up_down   // ② 左・サイド → 画面輝度
+                &vol_up_down      // ③ 右・サイド → 音量
             >;
         };
 
@@ -117,9 +135,9 @@
             >;
 
             sensor-bindings = <
-                &tab_slide
-                &scroll_up_down
-                &scroll_up_down
+                &scroll_up_down   // ① 左・下側  → スクロール
+                &bright_up_down   // ② 左・サイド → 画面輝度
+                &vol_up_down      // ③ 右・サイド → 音量
             >;
         };
 
@@ -133,9 +151,9 @@
             >;
 
             sensor-bindings = <
-                &tab_slide
-                &scroll_up_down
-                &scroll_up_down
+                &scroll_up_down   // ① 左・下側  → スクロール
+                &bright_up_down   // ② 左・サイド → 画面輝度
+                &vol_up_down      // ③ 右・サイド → 音量
             >;
         };
 
@@ -149,9 +167,9 @@
             >;
 
             sensor-bindings = <
-                &tab_slide
-                &scroll_up_down
-                &scroll_up_down
+                &scroll_up_down   // ① 左・下側  → スクロール
+                &bright_up_down   // ② 左・サイド → 画面輝度
+                &vol_up_down      // ③ 右・サイド → 音量
             >;
         };
     };
